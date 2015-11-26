@@ -1,28 +1,299 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>How equal are you in Kosovo?</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
     <!-- Javascript -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+      body{
+        font-family: Georgia, Serif;
+      }
+
+      hr{
+        margin-left:8%;
+        margin-right:8%;
+      }
+
+      .stats-container{
+        display:none;
+      }
+
+      .row{
+        font-size: 16px;
+        padding-bottom: 20px;
+      }
+    </style>
+
+    <script>
+      $( document ).ready(function() {
+          $('input[type=radio][name=gender]').change(function() {
+
+            if (this.value == 'Female') {
+              $('#val-gender-university').html('women');
+              $('#val-university').html('60%');
+
+              $('#val-gender-senior').html('female');
+              $('#val-senior').html('one');
+
+              $('#val-gender-minister').html('women');
+              $('#val-minister').html('10%');
+
+            }
+            else if (this.value == 'Male') {
+              $('#val-gender-university').html('men');
+              $('#val-university').html('40%');
+
+
+              $('#val-gender-senior').html('male');
+              $('#val-senior').html('five');
+
+              $('#val-gender-minister').html('men');
+              $('#val-minister').html('90%'); 
+            }
+
+            if($('.stats-container').css('display') === 'none'){
+              $('.stats-container').css('display', 'block')
+            }
+
+            $('html,body').animate({
+              'scrollTop': $('.stats-container').offset().top
+            }, 700);
+
+
+          });
+      });
+    </script>
 </head>
 <body>
   <div class="container-fluid">
-  	<div class="row">
-  		<div class="col-md-12">
-  		</div>
-  	</div>
-  	<div class="row">
-  		<div class="col-md-12">
-  		</div>
-  	</div>
-  	<div class="row">
-  		<div class="col-md-12">
-  		</div>
-  	</div>
+    <h1><strong>How equal are you in Kosovo?</strong></h1>
+    <hr>
+    <div align="center">
+      <div class="row">
+        <div class="col-md-12">
+          <div  style="max-width:600px">
+           <p class="text-justify">
+            On November 19, 2015, BBC News published "<a href="http://www.bbc.com/news/world-34808717" target="_blank">How equal are you?</a>": an excellent interactive analysis on gender inequality across several countries.  
+           </p class="text-justify">
+           <p class="text-justify">
+            Unfortunately, Kosovo wasn't one of the analyzed countries. In response to this omission, <a href="http://www.womensnetwork.org/" target="_blank">Kosova Women's Network</a> and <a href="http://opendatakosovo.org/" target="_blank">Open Data Kosovo</a> have teamed up and produced "How equal are you in Kosovo?"
+           </p>
+           <p class="text-justify">
+            BBC News, please integrate our data into your work. Also, please don't sue us for re-using your assets. We can change them if this upsets you!
+           </p>
+          </div>
+        </div>
+      </div>
+
+    	<div class="row">
+    		<div class="col-md-12">
+          <div>
+            <img class="img-responsive" src="img/gender-scale.png"/>
+          </div>
+
+          <div style="max-width:600px;background-color:#F2F2F2;padding:25px;"/>
+            <p>
+              <img src="img/kosovo-flag.png" width="200"/>
+              <br><br>
+              <strong>How equal are you in Kosovo?</strong>
+            </p>
+            <p>
+              <strong>Are you...</strong>
+            <p>
+            </p>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Female">Female
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="Male">Male
+              </label>
+            </p>
+          </div>  
+    		</div>
+    	</div>
+
+      <hr>
+
+      <div class="stats-container">
+      	<div class="row">
+      		<div class="col-md-12">
+            <div>
+              <img src="img/university-graduates.png" style="max-width:166px;"/>
+            </div>
+
+            <div style="max-width:500px;">
+              <h3>
+                <strong>
+                  Proportion of university graduates who are <span id="val-gender-university">men</span>
+                </strong>
+              </h3>
+            </div>
+
+            <div>
+                <p style="font-size:40px;color:#038080;">
+                  <strong>
+                    <span id="val-university">40%</span>
+                  </strong>
+                </p>
+            </div>
+
+            <div>
+              <img class="img-responsive" src="img/university-graduates-ratio.png" />
+            </div>
+      		</div>
+      	</div>
+
+        <hr>
+
+      	<div class="row">
+      		<div class="col-md-12">
+            <div style="max-width:350px;">
+              <h3>
+                <strong>
+                  Proportion of women and men in, or looking for, work
+                </strong>
+              </h3>
+            </div>
+
+            <div>
+              <img src="img/proportion-looking-for-work.png" style="max-width:250px;" />
+            </div>
+          </div>
+      	</div>
+
+        <hr>
+
+        <div class="row" style="padding-bottom:0px;">
+          <div class="col-md-12">
+            <div style="max-width:450px;">
+              <h3>
+                <strong>
+                  Around <span id="val-senior">one</span> in six senior officials, managers and legislators are <span id="val-gender-senior">female</span>.
+                </strong>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-right:18%;margin-left:18%;">
+          <div class="col-md-6">
+            <p style="font-size:40px;color:#038080;">
+              <strong>
+                <span id="val-university">14%</span>
+              </strong>
+            </p>
+            <img src="img/senior-officials-managers-and-legislators-female.png" style="max-width:209px;" />
+          </div>
+          <div class="col-md-6">
+            <p style="font-size:40px;color:#038080;">
+              <strong>
+                <span id="val-university">86%</span>
+              </strong>
+            </p>
+            <img src="img/senior-officials-managers-and-legislators-male.png" style="max-width:209px;" />
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div style="max-width:350px;">
+              <h3>
+                <strong>
+                  Share of government ministers that are <span id="val-gender-minister">women</span>
+                </strong>
+              </h3>
+            </div>
+
+            <div>
+                <p style="font-size:40px;color:#038080;">
+                  <strong>
+                    <span id="val-minister">10%</span>
+                  </strong>
+                </p>
+            </div>
+
+            <div>
+              <img class="img-responsive" src="img/share-of-government-ministers.png"/>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div  style="max-width:600px">
+              <div>
+                <h3>
+                  <strong>
+                    Credit
+                  </strong>
+                </h3>
+              </div>
+              <p>
+                BBC News' "<a href="http://www.bbc.com/news/world-34808717" target="_blank">How equal are you?</a>" was produced by Nassos Stylianou, Charlotte Thornton and Richard Bangay with additional data research by Olivia Dowsett.
+              </p>
+              <p>
+                The "How equal are you in Kosovo?" spinoff was produced by  <a href="http://www.womensnetwork.org/" target="_blank">Kosova Women's Network</a> and <a href="http://opendatakosovo.org/" target="_blank">Open Data Kosovo</a> with data research by Elizabeta Murati.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div  style="max-width:600px">
+              <div>
+                <h3>
+                  <strong>
+                    Source
+                  </strong>
+                </h3>
+              </div>
+              <p>
+                <strong>Proportion of university graduates who are women:</strong>
+                <br>
+                ESK (Enti i Statistikave te Kosoves), table 41, page 58.
+              </p>
+
+              <p>
+                <strong>Proportion of women and men in, or looking for, or work:</strong>
+                <br>
+                Kosovo Labor Force Survey 2014, page 24, figure 9. 
+              </p>
+
+              <p>
+                <strong>Around one in six senior officials, managers and legislators are female:</strong>
+                <br>
+                Labor Force Survey 2014, page 13, table 1.9.
+                <br>
+                Number of women who work as senior officials, managers and legislators is 3,800.
+                <br>
+                Number of men who work on Legislators, senior officials and managers is 23,000.
+                <br>
+                23000 / 3800 = 6.05, as result 1 in 6 officials, managers and legislators are female. 
+              </p>
+
+              <p>
+                <strong>Share of government ministers that are women:</strong>
+                <br>
+                <a href="http://www.kryeministri-ks.net/?page=1,43" target="_blank">Republic of Kosovo, The Office of The Primer Minister.</a>
+                <br>
+                2 women and 19 man. 2/21 * 100 = 9.5%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
