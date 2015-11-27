@@ -53,7 +53,7 @@
       $( document ).ready(function() {
           $('input[type=radio][name=gender]').change(function() {
 
-            if (this.value == 'Female') {
+            if (this.value == 'Woman') {
               // University graduates
               $('#val-gender-university').html('women');
               $('#val-university').html('60%');
@@ -77,7 +77,7 @@
               $('.social-share-minister.social-men').css('display', 'none');
 
             }
-            else if (this.value == 'Male') {
+            else if (this.value == 'Man') {
               // University graduates
               $('#val-gender-university').html('men');
               $('#val-university').html('40%');
@@ -159,14 +159,14 @@
               <strong>How equal are you in Kosovo?</strong>
             </p>
             <p>
-              <strong>Are you...</strong>
+              <strong>Are you a...</strong>
             <p>
             </p>
               <label class="radio-inline">
-                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="Woman">Woman
               </label>
               <label class="radio-inline">
-                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Man">Man
               </label>
             </p>
           </div>  
